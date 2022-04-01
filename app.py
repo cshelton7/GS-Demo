@@ -21,14 +21,16 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # 
 
+
 @app.route("/")
 def login():
     """
     Login page of application
     """
+    id = os.getenv("GSCLIENTID")
     return render_template(
         "login.html",
-        client_id = os.getenv("GSCLIENTID")
+        client_id = id
     )
 
 @app.route("/home")
