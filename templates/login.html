@@ -7,6 +7,16 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="{{ client_id }}">
     <script src="https://apis.google.com/js/api.js"></script>
+
+
+</head>
+
+<body>
+    <h1> Login Page </h1>
+
+    <a href="{{ url_for('home') }}"> Home</a>
+    <br><br>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -17,16 +27,6 @@
         }
 
     </script>
-
-</head>
-
-<body>
-    <h1> Login Page </h1>
-
-    <a href="{{ url_for('home') }}"> Home</a>
-    <br><br>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
 </body>
 
 </html>
