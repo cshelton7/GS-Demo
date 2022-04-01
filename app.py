@@ -11,7 +11,7 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 # Code from project milestones
 
 # point to heroku database
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+#app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 # remove a warning
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
