@@ -5,18 +5,9 @@
     <title>Log In</title>
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="{{ client_id }}">
+    <meta name="google-signin-client_id"
+        content="421755448203-kqtmv7fapin7sbbv3lu33nfag9gakjoh.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/api.js"></script>
-
-
-</head>
-
-<body>
-    <h1> Login Page </h1>
-
-    <a href="{{ url_for('home') }}"> Home</a>
-    <br><br>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -27,6 +18,16 @@
         }
 
     </script>
+
+</head>
+
+<body>
+    <h1> Login Page </h1>
+
+    <a href="{{ url_for('home') }}"> Home</a>
+    <br><br>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
 </body>
 
 </html>
