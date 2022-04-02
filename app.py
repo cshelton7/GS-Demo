@@ -59,7 +59,7 @@ def home():
     name = json.loads(flask.request.data)
     return render_template(
         "home.html",
-        user = name
+        user = name,
     )
 
 if __name__ == "__main__":
