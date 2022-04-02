@@ -32,9 +32,9 @@ def login():
 @app.route('/verify', methods=['POST'])
 def verify():
    # id_token = json.loads(flask.request.data)
-    try:
+   # try:
         # Specify the CLIENT_ID of the app that accesses the backend:
-        idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
+      #  idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
 
         # Or, if multiple clients access the backend server:
         # idinfo = id_token.verify_oauth2_token(token, requests.Request())
@@ -46,10 +46,10 @@ def verify():
         #     raise ValueError('Wrong hosted domain.')
 
     # ID token is valid. Get the user's Google Account ID from the decoded token.
-        userid = idinfo['sub']
-    except ValueError:
+     #   userid = idinfo['sub']
+   # except ValueError:
         # Invalid token
-        pass
+     #   pass
 
 @app.route("/home", methods=["GET", "POST"])
 def home():
