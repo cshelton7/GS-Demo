@@ -31,7 +31,7 @@ def login():
 # validate user
 @app.route('/verify', methods=['POST'])
 def verify():
-    id_token = json.loads(flask.request.data)
+   # id_token = json.loads(flask.request.data)
     try:
         # Specify the CLIENT_ID of the app that accesses the backend:
         idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
@@ -59,7 +59,7 @@ def home():
    # name = json.loads(flask.request.data)
     return render_template(
         "home.html",
-        user = name,
+        #user = name,
     )
 
 if __name__ == "__main__":
