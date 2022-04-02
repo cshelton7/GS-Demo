@@ -4,3 +4,8 @@ python-dotenv
 flask_login
 psycopg2-binary
 Flask-SQLAlchemy
+Flask==0.10.1
+oauth2client
+google-api-python-client
+pyopenssl
+pycrypto
