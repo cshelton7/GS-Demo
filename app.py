@@ -29,8 +29,8 @@ def login():
     )
 
 # validate user
-@app.route('/verify', methods=['POST'])
-def verify():
+#@app.route('/verify', methods=['POST'])
+#def verify():
    # id_token = json.loads(flask.request.data)
    # try:
         # Specify the CLIENT_ID of the app that accesses the backend:
