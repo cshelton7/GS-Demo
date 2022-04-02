@@ -1,7 +1,7 @@
 import os
 #from google.oauth2 import id_token
 #from google.auth.transport import requests
-from flask import Flask, render_template, redirect, flash, request, session
+from flask import Flask, render_template, redirect, flash, request, json, session
 from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
 
@@ -54,10 +54,12 @@ def home():
     """
     Home page of application
     """
-   # name = json.loads(flask.request.data)
+    if flask.request.method == "POST":
+        name = json.loads(flask.request.data)
+        return flask.redirect(flask.url_for("home"))
     return render_template(
         "home.html",
-        #user = name,
+        user = name,
     )
 
 if __name__ == "__main__":
