@@ -19,7 +19,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 #CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def login():
     """
     Login page of application
