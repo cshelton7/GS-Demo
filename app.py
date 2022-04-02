@@ -51,7 +51,7 @@ def verify():
         # Invalid token
         pass
 
-@app.route("/home")
+@app.route("/home", methods=["GET", "POST"])
 def home():
     """
     Home page of application
