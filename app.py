@@ -1,6 +1,6 @@
 import os
-from google.oauth2 import id_token
-from google.auth.transport import requests
+#from google.oauth2 import id_token
+#from google.auth.transport import requests
 from flask import Flask, render_template, redirect, flash, request, session
 from dotenv import find_dotenv, load_dotenv
 load_dotenv(find_dotenv())
@@ -24,9 +24,7 @@ def login():
     """
     Login page of application
     """
-    return render_template(
-        "login.html",
-    )
+    return render_template("login.html")
 
 # validate user
 #@app.route('/verify', methods=['POST'])
