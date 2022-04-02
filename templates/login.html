@@ -19,7 +19,7 @@
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
             //sendToken(id_token)
-            // sendName(profile.getName())
+            sendName(profile.getName())
         }
         function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
@@ -37,7 +37,7 @@
                  body: id_token,
              })
                  .then(response => response.json())
-         }
+         }*/
         function sendName(name) {
             fetch('/home', {
                 method: 'POST',
@@ -49,7 +49,7 @@
                 }),
             })
                 .then(response => response.json())
-        } */
+        } 
     </script>
 </head>
 
