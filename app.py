@@ -55,11 +55,9 @@ def home():
     """
     Home page of application
     """
-    if flask.request.method == "POST":
-        data = json.loads(flask.request.data)
-        for item in data:
-            name = data[0]
-        return flask.redirect(flask.url_for("home"))
+    data = json.loads(flask.request.data)
+    for item in data:
+        name = data[0]
     return render_template(
         "home.html",
         user = name,
