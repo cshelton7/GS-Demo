@@ -17,7 +17,7 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # read information from secrets file
-#CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']
+CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -25,7 +25,7 @@ def login():
     """
     Login page of application
     """
-    return render_template("login.html")
+    return render_template("login.html", client_id = CLIENT_ID)
 
 # validate user
 #@app.route('/verify', methods=['POST'])
