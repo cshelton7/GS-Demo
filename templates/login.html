@@ -41,12 +41,9 @@
         function sendName(name) {
             fetch('/home', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
                 body: JSON.stringify({
                     Gname: name,
-                }),
+                })
             })
                 .then(response => response.json())
         } 
