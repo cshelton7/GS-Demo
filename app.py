@@ -57,7 +57,7 @@ def home():
     """
     data = json.loads(flask.request.data)
     for item in data:
-        name = data[0]
+        name = "bruh"
     return render_template(
         "home.html",
         user = name,
