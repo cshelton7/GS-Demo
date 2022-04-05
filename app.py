@@ -1,6 +1,4 @@
 import os
-#from google.oauth2 import id_token
-#from google.auth.transport import requests
 import flask
 from flask import Flask, render_template, redirect, flash, request, json, session
 from dotenv import find_dotenv, load_dotenv
@@ -17,15 +15,25 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # read information from secrets file
-CLIENT_ID = json.loads(open(client_secrets.json, 'r').read())['web']['client_id']
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+app.secret_key = os.getenv("SECRET")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+if app.config["SQLALCHEMY_DATABASE_URI"].startswith("postgres://"):
+    app.config["SQLALCHEMY_DATABASE_URI"] = app.config[
+        "SQLALCHEMY_DATABASE_URI"
+    ].replace("postgres://", "postgresql://")
 
+# debug code for db
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy(app)
 
 @app.route("/", methods=["GET", "POST"])
 def login():
     """
     Login page of application
     """
-    return render_template("login.html", client_id = CLIENT_ID)
+    return render_template("login.html",)
 
 # validate user
 #@app.route('/verify', methods=['POST'])
@@ -55,11 +63,7 @@ def home():
     """
     Home page of application
     """
-    data = json.loads(flask.request.data)
-    name = "bruh"
     return render_template(
-        "home.html",
-        user = name,
     )
 
 if __name__ == "__main__":
